@@ -1,0 +1,18 @@
+@import "../mixins/mixins";
+
+.button {
+  padding: 5px;
+  margin-top: 30px;
+  border-radius:10px;
+
+  &-red {
+    @extend .button;
+    @include gradient-background(rgb(128, 0, 38),rgb(255, 0, 166), yellow);
+  }
+
+  &-blue {
+    @extend .button;
+    @include gradient-background( rgb(0, 183, 255), blue,rgb(128, 0, 98));
+
+  }
+}
