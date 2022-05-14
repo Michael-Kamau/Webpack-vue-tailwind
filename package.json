@@ -1,0 +1,25 @@
+{
+  "name": "webpack-vue-tailwind",
+  "version": "1.0.0",
+  "description": "A project that uses webpack to bundle tailwind, sass and vue files",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michael-Kamau/Webpack-vue-tailwind.git"
+  },
+  "keywords": [
+    "Webpack",
+    "Vue",
+    "Tailwind",
+    "Sass"
+  ],
+  "author": "Michael Kamau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michael-Kamau/Webpack-vue-tailwind/issues"
+  },
+  "homepage": "https://github.com/Michael-Kamau/Webpack-vue-tailwind#readme"
+}
