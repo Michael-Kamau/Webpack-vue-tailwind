@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const { VueLoaderPlugin } = require('vue-loader')
 const path = require("path");
 
 module.exports = {
@@ -17,6 +18,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -53,6 +58,13 @@ module.exports = {
         ],
       },
       {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
@@ -63,6 +75,7 @@ module.exports = {
           "sass-loader",
         ],
       },
+    
     ],
   },
 
@@ -70,5 +83,6 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
+    new VueLoaderPlugin()
   ],
 };
