@@ -1,7 +1,7 @@
 <template>
-  <div class="hello container">
+  <div class="hello container ">
     <h1>{{ msg }}</h1>
-    <p class="button-red">Welcome</p>
+    <p class="button-red font-light text-md p">Welcome</p>
      <p class="button-blue">Welcome</p>
     <img src="../../images/quote.png" />
   </div>
