@@ -1,26 +1,26 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require("vue-loader");
 const path = require("path");
 
 module.exports = {
   entry: "./index.js",
   mode: "development",
-  // output: {
-  //   filename: "main.js",
-  //   path: path.resolve(__dirname, "./dist"),
-  // },
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "./dist"),
+  },
   devServer: {
     static: {
-      directory: path.join(__dirname, './dist'),
+      directory: path.join(__dirname, "./dist"),
     },
-    // compress: true,
+    compress: true,
     port: 9000,
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: "vue-loader",
       },
       {
         test: /\.js$/,
@@ -59,10 +59,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ]
+        use: ["vue-style-loader", "css-loader", 'postcss-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -73,9 +70,10 @@ module.exports = {
           "css-loader",
           // Compiles Sass to CSS
           "sass-loader",
+          // POst css loader for tailwind
+          'postcss-loader'
         ],
       },
-    
     ],
   },
 
@@ -83,6 +81,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+  
   ],
 };

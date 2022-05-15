@@ -1,4 +1,9 @@
 @use 'components/button';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 $variable_color:rgb(0, 255, 76);
 body{
   background: $variable_color;
